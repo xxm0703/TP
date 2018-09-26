@@ -1,9 +1,22 @@
-$a = ARGV[0].to_i
-$b = ARGV[1].to_i
+a = ARGV[0].to_i
+b = ARGV[1].to_i
 c = ARGV[2].to_i
-def calc(d)
-	return (-$b + d) / 2*($a)
+
+if a == 0
+	p "It's a linear one..."
+	return
 end
-d = Math.sqrt($b*$b-4*$a*c)
-p "X1: #{calc(d)}"
-p "X2: #{calc(-d)}"
+
+d = b**2-4*a*c
+
+if d < 0
+	p "No real roots..."
+	return
+end
+
+d = Math.sqrt(d)
+
+p "X1: #{(-b-d)/2*a}"
+p "X2: #{(-b+d)/2*a}"
+
+
