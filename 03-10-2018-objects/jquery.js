@@ -32,10 +32,10 @@ function innerAttributeControlls(state, parent) {
 	var br = $("<br />");
 
 	$(update).click(function() {
-		var parent = $(this).parent();
-		var gKey = $(parent).children('#globalKey').val();
-		var lKey = $(parent).children('#localKey').val();
-		var value = $(parent).children('#value').val();
+		var paren = $(this).parent();
+		var gKey = $(paren).children('#globalKey').val();
+		var lKey = $(paren).children('#localKey').val();
+		var value = $(paren).children('#value').val();
 		innerObj = {};
 		innerObj[lKey] = value; 
 		state[gKey] = innerObj;
