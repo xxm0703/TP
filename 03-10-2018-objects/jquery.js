@@ -53,7 +53,7 @@ function innerAttributeControlls(state, parent) {
 	$(inner).click(function() {
 		console.log(state);
 		var gKey = span.children('#key').val();
-		innerAttributeControlls(state, span);
+		innerAttributeControlls(state[gKey], span);
 	});
 
 	$(remove).click(function() {
