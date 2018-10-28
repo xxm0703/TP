@@ -22,11 +22,14 @@ function updateState(state, parent) {
 }
 
 function innerAttributeControlls(state, parent) {
-	var span = $("<span />");
+	var depth = parseInt($(parent).attr("depth"))+1;
+	var span = $("<span />", {depth: depth, style: "padding-left:"+50*depth+"px"});
 	var jsonNodeGlobalKey = $("<input />", {id: 'key'});
+	var openBrac = $("<span />", {text : "{"});
 	var jsonNodeLocalKey = $("<input />", {id: 'localKey'});
 	var colon = $("<span />", {text : ":"});
 	var jsonNodeValue = $("<input />", {id: 'value'});
+	var closeBrac = $("<span />", {text : "}"});
 	var inner = $("<button />", {text:'Add Inner'});
 	var newNode = $("<button />", {text:'Add Node'});
 	var update = $("<button />", {text:'Update'});
@@ -39,33 +42,31 @@ function innerAttributeControlls(state, parent) {
 		var value = span.children('#value').val();
 		innerObj = {};
 		innerObj[lKey] = value;
-		console.log(state);
 		state[gKey] = innerObj;
 
 	});
 
 	$(newNode).click(function() {
 		var gKey = span.children('#key').val();
-		console.log(state);
 		createNewAttributeControlls(state[gKey], span);
 	});
 
 	$(inner).click(function() {
-		console.log(state);
 		var gKey = span.children('#key').val();
 		innerAttributeControlls(state[gKey], span);
 	});
 
 	$(remove).click(function() {
-		span.remove();
 		removeByKey(state, span);
+		span.remove();
 	});
 
 	span.append(jsonNodeGlobalKey);
-	span.append(colon);
+	span.append(openBrac);
 	span.append(jsonNodeLocalKey);
 	span.append(colon);
 	span.append(jsonNodeValue);
+	span.append(closeBrac);
 	span.append(newNode);
 	span.append(update);
 	span.append(inner);
@@ -76,7 +77,8 @@ function innerAttributeControlls(state, parent) {
 }
 
 function createNewAttributeControlls(state, parent) {
-	var span = $("<span />");
+	var depth = parseInt($(parent).attr("depth"))+1;
+	var span = $("<span />", {depth: depth, style: "padding-left:"+50*depth+"px"});
 	var jsonNodeKey = $("<input />", {text : "Key",id: 'key'});
 	var colon = $("<span />", {text : ":"});
 	var jsonNodeValue = $("<input />", {id: 'value'});
@@ -90,7 +92,7 @@ function createNewAttributeControlls(state, parent) {
 
 	$(remove).click(function() {
 		removeByKey(state, $(this).parent());
-		$(this).parent().remove();
+		span.remove();
 	});
 
 
@@ -106,8 +108,6 @@ function createNewAttributeControlls(state, parent) {
 
 function removeByKey(state, parent) {
 		var key = $(parent).children('#key').val();
-		console.log(key);
-		console.log(state);
 		delete state[key];
 		$(this).remove();
 }
