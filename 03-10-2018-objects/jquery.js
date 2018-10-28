@@ -23,7 +23,7 @@ function updateState(state, parent) {
 
 function innerAttributeControlls(state, parent) {
 	var span = $("<span />");
-	var jsonNodeGlobalKey = $("<input />", {id: 'globalKey'});
+	var jsonNodeGlobalKey = $("<input />", {id: 'key'});
 	var jsonNodeLocalKey = $("<input />", {id: 'localKey'});
 	var colon = $("<span />", {text : ":"});
 	var jsonNodeValue = $("<input />", {id: 'value'});
@@ -34,32 +34,31 @@ function innerAttributeControlls(state, parent) {
 	var br = $("<br />");
 
 	$(update).click(function() {
-		console.log(state );
-		var paren = $(this).parent();
-		var gKey = $(paren).children('#globalKey').val();
-		var lKey = $(paren).children('#localKey').val();
-		var value = $(paren).children('#value').val();
+		var gKey = span.children('#key').val();
+		var lKey = span.children('#localKey').val();
+		var value = span.children('#value').val();
 		innerObj = {};
 		innerObj[lKey] = value;
+		console.log(state);
 		state[gKey] = innerObj;
 
-		state = state[gKey];
 	});
 
 	$(newNode).click(function() {
-		var paren = $(this).parent();
-		var gKey = $(paren).children('#globalKey').val();
-		createNewAttributeControlls(state, span);
+		var gKey = span.children('#key').val();
+		console.log(state);
+		createNewAttributeControlls(state[gKey], span);
 	});
 
 	$(inner).click(function() {
 		console.log(state);
+		var gKey = span.children('#key').val();
 		innerAttributeControlls(state, span);
 	});
 
 	$(remove).click(function() {
-		removeByKey(state, $(this).parent());
-		$(this).parent().remove();
+		span.remove();
+		removeByKey(state, span);
 	});
 
 	span.append(jsonNodeGlobalKey);
@@ -108,6 +107,7 @@ function createNewAttributeControlls(state, parent) {
 function removeByKey(state, parent) {
 		var key = $(parent).children('#key').val();
 		console.log(key);
+		console.log(state);
 		delete state[key];
 		$(this).remove();
 }
