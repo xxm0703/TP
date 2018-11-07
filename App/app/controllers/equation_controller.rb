@@ -1,10 +1,5 @@
 class EquationController < ApplicationController
-	# def show
-	# 	render 'index'
-	# end
-	def index
-		render 'new'
-	end
+
 
 	def create
 		@a = params[:a].to_i
