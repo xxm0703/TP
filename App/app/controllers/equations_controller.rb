@@ -10,21 +10,21 @@ class EquationsController < ApplicationController
 		c = params[:equation][:c].to_f
 		@output = []
 		if a == 0
-      params[:equation][:root1] = -c/b
-      params[:equation][:root2] = -c/b
-      Equation.create(equation_params)
+	      params[:equation][:root1] = -c/b
+	      params[:equation][:root2] = -c/b
+	      Equation.create(equation_params)
 
-  		@output.push("It's a linear one...")
-			render 'show'
-			return
+		  @output.push("It's a linear one...")
+		  render 'show'
+		  return
 		end
 
 		d = b**2-4*a*c
 
 		if d < 0
-      params[:equation][:root1] = Nil
-      params[:equation][:root2] = Nil
-      Equation.create(equation_params)
+	      params[:equation][:root1] = Float::NAN
+	      params[:equation][:root2] = Float::NAN
+	      Equation.create(equation_params)
 
 			@output.push("No real roots...")
 			render 'show'

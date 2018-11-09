@@ -5,10 +5,10 @@
 <body>
   <%= render 'layouts/header' %>
   <h1>Here shall be the equations</h1>
-
+	<%= button_to "Create New", new_equation_path, method: :get%>
     <% Equation.all.each do |eq|%>
-      x1: <%= eq.root1 %>&nbsp&nbsp
-      x2: <%= eq.root2 %></br>
+      x1: <%= unless eq.root1.nil? then eq.root1 else 'NaN' end %>&nbsp&nbsp
+      x2: <%= unless eq.root2.nil? then eq.root2 else 'NaN' end %></br>
     <% end %></br>
 
 </body>
