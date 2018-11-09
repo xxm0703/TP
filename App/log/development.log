@@ -4711,3 +4711,45 @@ Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
 NameError (uninitialized constant EquationsController::Nil):
   
 app/controllers/equations_controller.rb:25:in `create'
+Started GET "/equations" for 127.0.0.1 at 2018-11-09 16:44:09 +0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/martin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by EquationsController#index as HTML
+  Rendering equations/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.6ms)
+  [1m[36mEquation Load (7.3ms)[0m  [1m[34mSELECT "equations".* FROM "equations"[0m
+  ↳ app/views/equations/index.html.erb:9
+  Rendered equations/index.html.erb within layouts/application (32.3ms)
+Completed 200 OK in 626ms (Views: 611.6ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/equations" for 127.0.0.1 at 2018-11-09 16:44:15 +0200
+Processing by EquationsController#index as HTML
+  Rendering equations/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mEquation Load (0.2ms)[0m  [1m[34mSELECT "equations".* FROM "equations"[0m
+  ↳ app/views/equations/index.html.erb:9
+  Rendered equations/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2018-11-09 16:44:16 +0200
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.6ms)
+  [1m[36mIndividual Load (7.9ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:4
+  Rendered individuals/index.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 49ms (Views: 27.4ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/equations" for 127.0.0.1 at 2018-11-09 16:44:18 +0200
+Processing by EquationsController#index as HTML
+  Rendering equations/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.3ms)
+  [1m[36mEquation Load (0.1ms)[0m  [1m[34mSELECT "equations".* FROM "equations"[0m
+  ↳ app/views/equations/index.html.erb:9
+  Rendered equations/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.1ms)
+
+
