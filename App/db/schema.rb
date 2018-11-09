@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_07_135645) do
+ActiveRecord::Schema.define(version: 2018_11_08_220526) do
+
+  create_table "equations", force: :cascade do |t|
+    t.decimal "a"
+    t.decimal "b"
+    t.decimal "c"
+    t.decimal "root1"
+    t.decimal "root2"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "individuals", force: :cascade do |t|
     t.string "name"

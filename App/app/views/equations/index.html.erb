@@ -1,0 +1,15 @@
+<html>
+<head>
+	<title> Equation </title>
+</head>
+<body>
+  <%= render 'layouts/header' %>
+  <h1>Here shall be the equations</h1>
+
+    <% Equation.all.each do |eq|%>
+      x1: <%= eq.root1 %>&nbsp&nbsp
+      x2: <%= eq.root2 %></br>
+    <% end %></br>
+
+</body>
+</html>

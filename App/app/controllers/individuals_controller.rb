@@ -3,8 +3,10 @@ class IndividualsController < ApplicationController
   end
 
   def show
+    @person = Individual.find(params[:id])
   end
 
   def index
+    @people = Individual.all
   end
 end

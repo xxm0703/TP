@@ -5,18 +5,20 @@
 <body>
   <%= render 'layouts/header' %>
 	<h1> My Implementation2 </h1>
-
-	<%= form_tag("/equation", method: "post") do %>
+ <% @equation.a = 1 %>
+ <% @equation.b = 3 %>
+ <% @equation.c = 2 %>
+	<%= form_for @equation do |f| %>
 		<%= label_tag(:a, "A:") %>
-  		<%= text_field_tag(:a, 1) %>
+  		<%= f.number_field :a%>
 		<br>
 		<%= label_tag(:b, "B:") %>
-  		<%= text_field_tag(:b, 3) %>
+  		<%= f.number_field :b %>
 		<br>
 		<%= label_tag(:c, "C:") %>
-  		<%= text_field_tag(:c, 2) %>
+  		<%= f.number_field :c %>
 		<br>
-		<%= submit_tag("Calculate") %>
+		<%= f.submit("Calculate") %>
 	<% end %>
 
 </body>

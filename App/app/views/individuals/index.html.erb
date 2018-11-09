@@ -1,2 +1,8 @@
 <h1>Individuals#index</h1>
 <p>Find me in app/views/individuals/index.html.erb</p>
+<%= render "layouts/header" %>
+<% @people.each do |person| %>
+Name: <%= link_to person.name, individual_path(person.id)%>
+</br>
+</br>
+<% end %>
