@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        #input {
+          width: 50%;
+        }
+    </style>
+    <script>
+
+        $(document).ready(() => {
+          $("#btnGetRequest").click(loadObject());
+        });
+
+        function loadObject(json) {
+		  $.ajax({
+			url:$('#textUrl').val() ,
+			type: "GET",
+			dataType: "json",
+			crossDomain: true,
+			processData: false,
+			success:  function (data, status, xhr){
+				var jsonObject = JSON.parse(JSON.stringify(data)) ;
+				showObject(jsonObject);
+			},
+			error: function(data, status, xhr) {
+				alert(JSON.stringify(data));
+			}
+		  });
+        }
+
+        function showObject(object) {
+            $("#container").empty();
+
+            for (currentKey in object) {
+                let span = $("<span>")
+                    .attr("id", currentKey)
+                    .attr("class", "pairs")
+
+                let key = $("<input>")
+                    .attr("type", "text")
+                    .attr("disabled", true)
+                    .val(currentKey);
+
+                let value = $("<input>")
+                    .attr("type", "text")
+                    .attr("disabled", true)
+                    .val(object[currentKey]);
+
+                let br = $("<br>")
+
+                span.append(key)
+                    .append(value)
+                    .append(br);
+
+                span.appendTo($("#container"));
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h3>My implementation of the HW</h3>
+    <textarea id="textUrl" cols="30" rows="10"></textarea>
+	<input id="btnGetRequest" type="button"/>
+    <div id="container"></div>
+    <h5>Съжалявам ако нещо съм объркал, но отсъствах, а условието не го рабирам добре</h5>
+
+
+</body>
+</html>
