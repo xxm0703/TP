@@ -1,0 +1,10 @@
+<h1>People#new</h1>
+<p>Find me in app/views/people/new.html.erb</p>
+
+<%= form_for Person.new do |f| %>
+  First name: <%= f.text_field :first_name %><br />
+  Last name : <%= f.text_field :last_name %><br />
+  Age : <%= f.number_field :age %><br />
+  Sex : <%= f.check_box :sex %><br />
+  <%= f.submit %>
+<% end %>
