@@ -5,11 +5,34 @@
 <body>
   <%= render 'layouts/header' %>
   <h1>Here shall be the equations</h1>
-	<%= button_to "Create New", new_equation_path, method: :get%>
-    <% Equation.all.each do |eq|%>
-      x1: <%= unless eq.root1.nil? then eq.root1 else 'NaN' end %>&nbsp&nbsp
-      x2: <%= unless eq.root2.nil? then eq.root2 else 'NaN' end %></br>
-    <% end %></br>
+	<%= link_to "New", new_equation_path%>
+	<table>
+		<tr>
+			<th> A </th>
+			<th> B </th>
+			<th> C </th>
+		</tr>
+    <% @equation.each do |eq|%>
+			<tr class="equations" id="<%= eq.id %>">
+				<td>
+					<%= unless eq.a.nil? then eq.a else 'NaN' end %>&nbsp&nbsp
+				</td>
+				<td>
+					<%= unless eq.b.nil? then eq.b else 'NaN' end %>&nbsp&nbsp
+				</td>
+				<td>
+					<%= unless eq.c.nil? then eq.c else 'NaN' end %>
+				</td>
+				<td>
+					<%= link_to "show", equation_path(eq)%>
+					<%= link_to "edit", edit_equation_path(eq)%>
+					<%= link_to 'destroy', equation_path(eq),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+				</td>
+			</tr>
+		<% end %></br>
+	</table>
 
 </body>
 </html>

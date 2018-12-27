@@ -8,18 +8,8 @@
  <% @equation.a = 1 %>
  <% @equation.b = 3 %>
  <% @equation.c = 2 %>
-	<%= form_for @equation do |f| %>
-		<%= label_tag(:a, "A:") %>
-  		<%= f.number_field :a%>
-		<br>
-		<%= label_tag(:b, "B:") %>
-  		<%= f.number_field :b %>
-		<br>
-		<%= label_tag(:c, "C:") %>
-  		<%= f.number_field :c %>
-		<br>
-		<%= f.submit("Calculate") %>
-	<% end %>
+ <%= render 'form', equation: @equation %>
+
 
 </body>
 </html>
