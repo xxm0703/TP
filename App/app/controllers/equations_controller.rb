@@ -1,49 +1,76 @@
 class EquationsController < ApplicationController
 
+  def index
+    @equation = Equation.all
+  end
+
+  def show
+    @equation = Equation.find(params[:id])
+  end
+
+  def edit
+    @equation = Equation.find(params[:id])
+  end
+
   def new
     @equation = Equation.new
   end
 
 	def create
-		a = params[:equation][:a].to_f
-		b = params[:equation][:b].to_f
-		c = params[:equation][:c].to_f
-		@output = []
-		if a == 0
-	      params[:equation][:root1] = -c/b
-	      params[:equation][:root2] = -c/b
-	      Equation.create(equation_params)
 
-		  @output.push("It's a linear one...")
-		  render 'show'
-		  return
-		end
+    @equation = Equation.new(equation_params)
+    calculate
 
-		d = b**2-4*a*c
-
-		if d < 0
-	      params[:equation][:root1] = Float::NAN
-	      params[:equation][:root2] = Float::NAN
-	      Equation.create(equation_params)
-
-			@output.push("No real roots...")
-			render 'show'
-			return
-		end
-
-		d = Math.sqrt(d)
-    params[:equation][:root1] = (-b-d)/2*a
-    params[:equation][:root2] = (-b+d)/2*a
-    Equation.create(equation_params)
-
-		@output.push("X1: #{(-b-d)/2*a}")
-		@output.push("X2: #{(-b+d)/2*a}")
-
-
-		render 'show'
+    if @equation.save
+      redirect_to @equation
+    else
+      render 'new'
+    end
 	end
 
+  def update
+
+    @equation = Equation.find(params[:id])
+
+    if @equation.update(equation_params)
+      calculate
+      @equation.save
+      redirect_to @equation
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @equation = Equation.find(params[:id])
+    @equation.destroy
+
+    redirect_to equations_path
+  end
+
 private
+
+  def calculate
+    @output = []
+    d = @equation.b**2-4*@equation.a*@equation.c
+
+    if @equation.a == 0
+      @equation.root1 = -@equation.c/@equation.b
+      @equation.root2 = -@equation.c/@equation.b
+      @output.push("It's a linear one...")
+    elsif d < 0
+      @equation.root1 = Float::NAN
+      @equation.root2 = Float::NAN
+      @output.push("No real roots...")
+    else
+      d = Math.sqrt(d)
+      @equation.root1 = (-@equation.b-d)/2*@equation.a
+      @equation.root2 = (-@equation.b+d)/2*@equation.a
+      @output.push("X1: #{(-@equation.b-d)/2*@equation.a}")
+      @output.push("X2: #{(-@equation.b+d)/2*@equation.a}")
+    end
+  end
+
   def equation_params
     params.require(:equation).permit(:a, :b, :c, :root1, :root2)
   end
