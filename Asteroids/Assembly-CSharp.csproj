@@ -61,9 +61,11 @@
      <Compile Include="Assets\Scripts\GameStateController.cs" />
      <Compile Include="Assets\Scripts\HitReceiver.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\PowerUpPurchases.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
      <Compile Include="Assets\Scripts\ScoreController.cs" />
      <Compile Include="Assets\Scripts\ScreenWrapper.cs" />
+     <Compile Include="Assets\Scripts\UpgradeBar.cs" />
      <Compile Include="Assets\Scripts\Weapon.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>/home/martin/Programming/TP/Asteroids/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
