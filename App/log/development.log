@@ -8472,3 +8472,145 @@ Processing by EquationsController#index as HTML
 Completed 200 OK in 28ms (Views: 26.1ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/equations/6/edit" for 127.0.0.1 at 2018-12-27 21:21:32 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by EquationsController#edit as HTML
+  Parameters: {"id"=>"6"}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/martin/Programming/TP/App/app/models/equation.rb:6: syntax error, unexpected keyword_end):
+  
+app/models/equation.rb:6: syntax error, unexpected keyword_end
+app/controllers/equations_controller.rb:12:in `edit'
+Started GET "/equations/6/edit" for 127.0.0.1 at 2018-12-27 21:21:51 +0200
+Processing by EquationsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEquation Load (0.2ms)[0m  [1m[34mSELECT  "equations".* FROM "equations" WHERE "equations"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/equations_controller.rb:12
+  Rendering equations/edit.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered equations/_form.html.erb (7.9ms)
+  Rendered equations/edit.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 246ms (Views: 227.8ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/equations/6" for 127.0.0.1 at 2018-12-27 21:22:44 +0200
+Processing by EquationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UfaqyXMp+7u10NLauckB2m9braARioyX9+XwEvzzW8OItr6PjyoLFn6zsrPic8zjurZaNJN9oESr3weUIEaG1w==", "equation"=>{"a"=>"3.0", "b"=>"-24", "c"=>"36.0"}, "commit"=>"Update Equation", "id"=>"6"}
+  [1m[36mEquation Load (0.4ms)[0m  [1m[34mSELECT  "equations".* FROM "equations" WHERE "equations"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/equations_controller.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/equations_controller.rb:35
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/equations_controller.rb:35
+  Rendering equations/edit.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered equations/_form.html.erb (2.6ms)
+  Rendered equations/edit.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 39ms (Views: 24.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2018-12-27 21:24:56 +0200
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.5ms)
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:4
+  Rendered individuals/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 30ms (Views: 27.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/individuals/1" for 127.0.0.1 at 2018-12-27 21:25:01 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:6
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered individuals/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 28ms (Views: 22.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/equations" for 127.0.0.1 at 2018-12-27 21:25:03 +0200
+Processing by EquationsController#index as HTML
+  Rendering equations/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.8ms)
+  [1m[36mEquation Load (0.3ms)[0m  [1m[34mSELECT "equations".* FROM "equations"[0m
+  ↳ app/views/equations/index.html.erb:15
+  Rendered equations/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 52ms (Views: 24.7ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/equations/6" for 127.0.0.1 at 2018-12-27 21:25:08 +0200
+Processing by EquationsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"u1EuZnUzgbF4fWa2wvNAcA+vey0Rdm6hcMwKaibKUEViETogiTBxHLMeBt+ZSY1J2kKMuZOBQnIs9v3s+n+NUQ==", "id"=>"6"}
+  [1m[36mEquation Load (0.2ms)[0m  [1m[34mSELECT  "equations".* FROM "equations" WHERE "equations"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/equations_controller.rb:45
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/equations_controller.rb:46
+  [1m[36mEquation Destroy (0.6ms)[0m  [1m[31mDELETE FROM "equations" WHERE "equations"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/equations_controller.rb:46
+  [1m[35m (11.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/equations_controller.rb:46
+Redirected to http://localhost:3000/equations
+Completed 302 Found in 16ms (ActiveRecord: 12.6ms)
+
+
+Started GET "/equations" for 127.0.0.1 at 2018-12-27 21:25:08 +0200
+Processing by EquationsController#index as HTML
+  Rendering equations/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.5ms)
+  [1m[36mEquation Load (0.2ms)[0m  [1m[34mSELECT "equations".* FROM "equations"[0m
+  ↳ app/views/equations/index.html.erb:15
+  Rendered equations/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 25ms (Views: 23.5ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/equations/7" for 127.0.0.1 at 2018-12-27 21:25:10 +0200
+Processing by EquationsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"s+9hEEylVIEuA1wpMhuUkJqTLvfL9uX0fyIEpZIQKtBqr3VWsKakLOVgPEBpoVmpT37ZY0kByScjGPMjTqX3xA==", "id"=>"7"}
+  [1m[36mEquation Load (0.1ms)[0m  [1m[34mSELECT  "equations".* FROM "equations" WHERE "equations"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/equations_controller.rb:45
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/equations_controller.rb:46
+  [1m[36mEquation Destroy (0.6ms)[0m  [1m[31mDELETE FROM "equations" WHERE "equations"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/equations_controller.rb:46
+  [1m[35m (10.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/equations_controller.rb:46
+Redirected to http://localhost:3000/equations
+Completed 302 Found in 16ms (ActiveRecord: 11.2ms)
+
+
+Started GET "/equations" for 127.0.0.1 at 2018-12-27 21:25:10 +0200
+Processing by EquationsController#index as HTML
+  Rendering equations/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.6ms)
+  [1m[36mEquation Load (0.3ms)[0m  [1m[34mSELECT "equations".* FROM "equations"[0m
+  ↳ app/views/equations/index.html.erb:15
+  Rendered equations/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 27ms (Views: 25.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/equations/12" for 127.0.0.1 at 2018-12-27 21:25:26 +0200
+Processing by EquationsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mEquation Load (0.1ms)[0m  [1m[34mSELECT  "equations".* FROM "equations" WHERE "equations"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/equations_controller.rb:8
+  Rendering equations/show.html.erb within layouts/application
+  Rendered equations/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 22ms (Views: 20.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/equations" for 127.0.0.1 at 2018-12-27 21:25:28 +0200
+Processing by EquationsController#index as HTML
+  Rendering equations/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.8ms)
+  [1m[36mEquation Load (0.3ms)[0m  [1m[34mSELECT "equations".* FROM "equations"[0m
+  ↳ app/views/equations/index.html.erb:15
+  Rendered equations/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 28ms (Views: 26.8ms | ActiveRecord: 0.3ms)
+
+
