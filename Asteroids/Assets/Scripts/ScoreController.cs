@@ -12,7 +12,11 @@ public class ScoreController : MonoBehaviour {
 		var gameStateController = GameStateController.Instance;
 		if (gameStateController) {
 			currentScore = gameStateController.GetCurrentScore ();
+			scoreLabel.text = string.Format (scoreText, currentScore);
 		}
-		scoreLabel.text = string.Format (scoreText, currentScore);
+		else
+		{
+			scoreLabel.enabled = false;
+		}	
 	}
 }
