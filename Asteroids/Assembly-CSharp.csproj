@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\PowerUpPurchases.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
      <Compile Include="Assets\Scripts\ScoreController.cs" />
+     <Compile Include="Assets\Scripts\ScoreCounter.cs" />
      <Compile Include="Assets\Scripts\ScreenWrapper.cs" />
      <Compile Include="Assets\Scripts\UpgradeBar.cs" />
      <Compile Include="Assets\Scripts\Weapon.cs" />

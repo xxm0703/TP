@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameStateController : MonoBehaviour {
@@ -8,6 +9,7 @@ public class GameStateController : MonoBehaviour {
 	public float GameOverScreenDelay = 2.0f;
 	public string GameOverScene = "GameOver";
 	private uint CurrentScore = 0;
+  private int coins;
 	public static GameStateController Instance { get; private set; }
 	void Awake()
 	{
@@ -20,6 +22,7 @@ public class GameStateController : MonoBehaviour {
 		{
 			Destroy(gameObject);
 		}
+    coins = PlayerPrefs.GetInt("coins");
 	}
 
 	public void OnPlayerSpawned()
@@ -29,6 +32,8 @@ public class GameStateController : MonoBehaviour {
 
 	public void OnPlayerDied()
 	{
+    coins += (int)CurrentScore / 10;
+    PlayerPrefs.SetInt("coins", coins);
 		Invoke ("ShowGameOverScreen", GameOverScreenDelay);
 	}
 
@@ -40,7 +45,6 @@ public class GameStateController : MonoBehaviour {
 	{
 		return CurrentScore;
 	}
-
 
 	void ShowGameOverScreen()
 	{

@@ -11,7 +11,6 @@ public class GameOverMenuHandler : MonoBehaviour {
 
 	public void RestartGame()
 	{
-		Debug.Log("smth1");
 		SceneManager.LoadScene(GameScene);
 	}
 
@@ -19,12 +18,12 @@ public class GameOverMenuHandler : MonoBehaviour {
 	{
 		SceneManager.LoadScene(ShopScene);
 	}
-		
+
 	public void GameOver()
 	{
 		SceneManager.LoadScene(GameOverScene);
 	}
-		
+
 	public void QuitGame()
 	{
 		Application.Quit();
