@@ -8,9 +8,9 @@ public class GameStateController : MonoBehaviour {
 
 	public float GameOverScreenDelay = 2.0f;
 	public string GameOverScene = "GameOver";
+  public static GameStateController Instance { get; private set; }
 	private uint CurrentScore = 0;
   private int coins;
-	public static GameStateController Instance { get; private set; }
 	void Awake()
 	{
 		if (Instance == null)

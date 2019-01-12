@@ -54,5 +54,7 @@ public class PlayerController : MonoBehaviour
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.MovePosition(transform.position + direction);
         rb.MoveRotation(newRotation);
+        verticalInput = 0;
+        horizontalInput = 0;
     }
 }

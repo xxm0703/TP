@@ -10,7 +10,13 @@ public class HitReceiver : MonoBehaviour {
 	public float DestructionFXDuration = 0.5f;
 	public uint ScoreOnDeath = 0;
 	public bool DebugDraw = false;
-	
+  private int SessionShield;
+
+  void Start()
+  {
+    SessionShield = PlayerPrefs.GetInt("shield");
+  }
+
 	public void ReceiveHit(GameObject damageDealer)
 	{
 		if (ObjectToSpawnOnDeath != null)
@@ -27,6 +33,16 @@ public class HitReceiver : MonoBehaviour {
 			GameObject spawnedFX = Instantiate (DestructionFX, transform.position, Random.rotation);
 			Destroy (spawnedFX, DestructionFXDuration);
 		}
+
+    Debug.Log(gameObject.name);
+    if (gameObject.name.Equals("Shield"))
+    {
+      Debug.Log(SessionShield);
+      --SessionShield;
+      if (SessionShield != 0)
+        return;
+    }
+
 		GameStateController.Instance.IncrementScore (ScoreOnDeath);
 		Destroy (gameObject);
 	}

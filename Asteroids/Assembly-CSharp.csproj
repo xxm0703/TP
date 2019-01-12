@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\AsteroidMovementController.cs" />
      <Compile Include="Assets\Scripts\AsteroidSpawner.cs" />
      <Compile Include="Assets\Scripts\DamageDealer.cs" />
+     <Compile Include="Assets\Scripts\FolowShip.cs" />
      <Compile Include="Assets\Scripts\FramerateLimiter.cs" />
      <Compile Include="Assets\Scripts\GameOverMenuHandler.cs" />
      <Compile Include="Assets\Scripts\GameStateController.cs" />
