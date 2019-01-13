@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 114271563832653010}
   - component: {fileID: 114035143427911252}
   - component: {fileID: 114485347675494366}
-  - component: {fileID: 7341833294370010095}
   m_Layer: 0
   m_Name: prop_asteroid_01
   m_TagString: Asteroid
@@ -174,16 +173,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TagToHit: Player
---- !u!114 &7341833294370010095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1577336602019996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2cfeb162fa247f41bed5d53ef9b2947, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TagToHit: Shield

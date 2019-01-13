@@ -9,7 +9,6 @@ public class DamageDealer : MonoBehaviour {
 	{
 		if(collision.gameObject.CompareTag(TagToHit))
 		{
-			Destroy(gameObject);
 			HitReceiver hitReceiver = collision.gameObject.GetComponent<HitReceiver> ();
 			if (hitReceiver) {
 				hitReceiver.ReceiveHit (gameObject);
@@ -17,7 +16,6 @@ public class DamageDealer : MonoBehaviour {
 			} else {
 				Destroy (collision.gameObject);
 			}
-
 		}
 	}
 }

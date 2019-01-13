@@ -34,10 +34,8 @@ public class HitReceiver : MonoBehaviour {
 			Destroy (spawnedFX, DestructionFXDuration);
 		}
 
-    Debug.Log(gameObject.name);
     if (gameObject.name.Equals("Shield"))
     {
-      Debug.Log(SessionShield);
       --SessionShield;
       if (SessionShield != 0)
         return;

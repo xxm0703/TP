@@ -10,7 +10,7 @@ public class FolowShip : MonoBehaviour
 
     void Start()
     {
-      offset = new Vector3(0, 0.4f, 0);
+      offset = new Vector3(0, 0.16f, 0);
 
       shield = PlayerPrefs.GetInt("shield");
       if (shield == 0)

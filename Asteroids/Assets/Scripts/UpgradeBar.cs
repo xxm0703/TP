@@ -30,17 +30,11 @@ public class UpgradeBar : MonoBehaviour
         PlayerPrefs.SetInt("shield",  shield + 1);
         bar.fillAmount += 0.2f;
         PlayerPrefs.SetInt("coins",  coins - (shield + 1) * BASE);
-        // ShowCoins();
       }
 		}
 	}
 
   void OnGUI()
-  {
-    ShowCoins();
-  }
-
-  private void ShowCoins()
   {
     GUIStyle LabelStyle = GUI.skin.GetStyle("Label");
     LabelStyle.fontSize = 20;

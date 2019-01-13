@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 54281869753932590}
   - component: {fileID: 136362241876314564}
   - component: {fileID: 114650584662402292}
-  - component: {fileID: 3027160891962985650}
   - component: {fileID: 114215871120247160}
   - component: {fileID: 114348341456347106}
   - component: {fileID: 114551222100918546}
@@ -129,19 +128,6 @@ MonoBehaviour:
   AsteroidSpeed: 4
   AsteroidAngularSpeed: 0.5
   InitialDirection: {x: 0, y: 0, z: 0}
---- !u!114 &3027160891962985650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1062156983296966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2cfeb162fa247f41bed5d53ef9b2947, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TagToHit: "Shield\x13"
 --- !u!114 &114215871120247160
 MonoBehaviour:
   m_ObjectHideFlags: 0
