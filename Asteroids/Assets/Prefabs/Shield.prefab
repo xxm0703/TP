@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2092476247310804729}
   - component: {fileID: 2092476247310804614}
-  - component: {fileID: 1661995329920098913}
   - component: {fileID: 301663431292479200}
+  - component: {fileID: 9060641093053623655}
   - component: {fileID: 7440656080613861568}
   - component: {fileID: 5916944359474112597}
   - component: {fileID: 4849630915756612988}
@@ -93,7 +93,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1661995329920098913
+--- !u!114 &301663431292479200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092476247310804612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2cfeb162fa247f41bed5d53ef9b2947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TagToHit: Asteroid
+--- !u!114 &9060641093053623655
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,19 +125,6 @@ MonoBehaviour:
   DestructionFXDuration: 0.5
   ScoreOnDeath: 0
   DebugDraw: 0
---- !u!114 &301663431292479200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2092476247310804612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2cfeb162fa247f41bed5d53ef9b2947, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TagToHit: Asteroid
 --- !u!135 &7440656080613861568
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -136,7 +136,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.45
   m_Center: {x: 2.5, y: 0, z: 0}
 --- !u!135 &5916944359474112597
 SphereCollider:
@@ -149,7 +149,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.45
   m_Center: {x: 0, y: -2.5, z: 0}
 --- !u!135 &4849630915756612988
 SphereCollider:
@@ -162,7 +162,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.45
   m_Center: {x: -2.5, y: 0, z: 0}
 --- !u!135 &5444234815975182645
 SphereCollider:
@@ -175,7 +175,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.45
   m_Center: {x: 0, y: 2.5, z: 0}
 --- !u!135 &5905573863536460001
 SphereCollider:
@@ -188,7 +188,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.45
   m_Center: {x: -1.25, y: -2.16, z: 0}
 --- !u!135 &8048476835740979632
 SphereCollider:
@@ -201,7 +201,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.45
   m_Center: {x: -1.25, y: 2.16, z: 0}
 --- !u!135 &7984793569662488898
 SphereCollider:
@@ -214,7 +214,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.45
   m_Center: {x: 2.16, y: 1.25, z: 0}
 --- !u!135 &2641131825184271059
 SphereCollider:
@@ -227,7 +227,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.45
   m_Center: {x: 1.25, y: 2.16, z: 0}
 --- !u!135 &1479445137164984560
 SphereCollider:
@@ -240,7 +240,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.45
   m_Center: {x: 1.25, y: -2.16, z: 0}
 --- !u!135 &2927057942034572118
 SphereCollider:
@@ -253,7 +253,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.45
   m_Center: {x: 2.16, y: -1.25, z: 0}
 --- !u!135 &8355356229332122838
 SphereCollider:
@@ -266,7 +266,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.45
   m_Center: {x: -2.16, y: 1.25, z: 0}
 --- !u!135 &724018234443077371
 SphereCollider:
@@ -279,5 +279,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.45
   m_Center: {x: -2.16, y: -1.25, z: 0}

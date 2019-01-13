@@ -14,9 +14,9 @@ public class UpgradeBar : MonoBehaviour
   */
   void Start()
   {
+    // PlayerPrefs.SetInt("shield", 0);
     coins = PlayerPrefs.GetInt("coins");
     shield = PlayerPrefs.GetInt("shield");
-    // PlayerPrefs.SetInt("shield", 0);
     if (bar)
       bar.fillAmount = (1f / LEVELS) * shield;
   }
@@ -29,7 +29,8 @@ public class UpgradeBar : MonoBehaviour
       {
         PlayerPrefs.SetInt("shield",  shield + 1);
         bar.fillAmount += 0.2f;
-        PlayerPrefs.SetInt("coins",  coins - (shield + 1) * BASE);
+        coins -= (shield + 1) * BASE;
+        PlayerPrefs.SetInt("coins",  coins);
       }
 		}
 	}
