@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_08_220526) do
+ActiveRecord::Schema.define(version: 2019_01_13_215641) do
 
   create_table "equations", force: :cascade do |t|
     t.decimal "a"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2018_11_08_220526) do
     t.decimal "root2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "writer_id"
+    t.index ["writer_id"], name: "index_equations_on_writer_id"
   end
 
   create_table "individuals", force: :cascade do |t|
