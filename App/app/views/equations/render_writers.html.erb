@@ -1,0 +1,24 @@
+<%= render  "layouts/header" %>
+
+
+<h2>
+	a: <%= @equation.a %>
+	b: <%= @equation.b %>
+	c: <%= @equation.c %>
+</h2>
+<h2>
+	x1: <%= unless @equation.root1.nil? then @equation.root1 else "NaN" end %>
+	</br>
+	x2: <%= unless @equation.root2.nil? then @equation.root2 else "NaN" end %>
+</h2>
+
+<h1> Choose one of them: </h1>
+
+<% @people.each do |person| %>
+    <div class="spacer">
+        <%="Person #{person.id}: " %>
+        <%= link_to person.name, controller: "equations", action: "add_writer", writer_id: person.id %>
+    </div>
+<% end %>
+
+<%= link_to "Go Back", equations_path, method:'get' %>

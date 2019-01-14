@@ -1,5 +1,22 @@
 class EquationsController < ApplicationController
 
+  def render_writers
+    @equation = Equation.find(params[:id])
+    @people = Individual.all
+    render 'render_writers'
+  end
+
+  def add_writer
+    equation = Equation.find(params[:id])
+    equation.writer_id = params[:writer_id]
+    if equation.save!
+      redirect_to equation
+    else
+      render plain: "Something went wrong on save!!"
+    end
+    
+  end
+
   def index
     @equation = Equation.all
   end

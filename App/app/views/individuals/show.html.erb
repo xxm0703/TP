@@ -1,10 +1,9 @@
-<h1>Individuals#show</h1>
-<p>Find me in app/views/individuals/show.html.erb</p>
 <%= render "layouts/header" %>
 
-Name: <%= @person.name %>
-</br>
-Age: <%= @person.age %>
-</br>
-</br>
+<div class="spacer">
+        Name: <%= @person.name %>
+        <br>    
+        Age: <%= @person.age %>
+</div>
+
 <%= link_to "Go Back", individuals_path %>

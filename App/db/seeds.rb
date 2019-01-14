@@ -3,5 +3,5 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+individuals = Individual.create([{ name: 'Martin', age: 17}, { name: 'Gosho', age: 42}, { name: 'Tosho', age: 3}])
+# Character.create(name: 'Luke', movie: movies.first)

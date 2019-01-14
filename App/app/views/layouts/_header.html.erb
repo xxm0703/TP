@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <%= link_to "equation" , equations_path%>
-    <%= link_to "individual" , individuals_path%>
-    </br>
-    </br>
-    <%= yield %>
+
+      <ul class="nav-bar">
+        <li>
+          <%= link_to "equation" , equations_path%>
+        </li>
+        <li>
+          <%= link_to "individual" , individuals_path%>
+        </li>
+      </ul>
+
+    <%= yield   %>
+  
   </body>
 </html>
