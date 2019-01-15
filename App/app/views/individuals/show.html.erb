@@ -1,11 +1,16 @@
 <%= render "layouts/header" %>
 
-<div class="spacer">
-        Name: <%= @person.name %>
-        </br>    
-        Age: <%= @person.age %>
-        </br>    
-	<%= link_to "Add equation", "#{@person.id}/new_equation"%>
+<div class="spacer" id="info">
+        <div> 
+                <span>Name: <%= @person.name %></span>
+                <span>Age: <%= @person.age %></span>
+        </div>
+        <%= button_to "Add equation", "#{@person.id}/new_equation"%>
+</div>
+<div id="equations">
+
+<%= render 'layouts/equation_table', equations: @person.equations %>
+
 
 </div>
 

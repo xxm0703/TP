@@ -6,3 +6,37 @@
     display: block;
     margin: 10px auto;
 }
+
+#info
+{
+    background-color: rgb(204, 204, 204);
+    border-radius: 20px;
+    padding: 10px;
+    width: 50%;
+    float: left;
+}
+
+#equations
+{
+    clear: left;
+    margin: 15px;
+}
+
+div ~ form
+{
+    margin-top: 20px;
+}
+
+table
+{
+    background: rgb(204, 204, 204);
+}
+span + span
+{
+    margin: auto 10px;
+}
+
+span
+{
+    font-size: 15px;
+}
