@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+    <%= form.hidden_field :writer_id, value: params[:id] %>
+  </div>
+
+  <div class="field">
     <%= form.label :a %>
     <%= form.number_field :a %>
   </div>

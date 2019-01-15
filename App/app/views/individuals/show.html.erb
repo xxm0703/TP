@@ -2,8 +2,11 @@
 
 <div class="spacer">
         Name: <%= @person.name %>
-        <br>    
+        </br>    
         Age: <%= @person.age %>
+        </br>    
+	<%= link_to "Add equation", "#{@person.id}/new_equation"%>
+
 </div>
 
 <%= link_to "Go Back", individuals_path %>
