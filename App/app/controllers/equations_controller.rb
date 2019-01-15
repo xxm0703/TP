@@ -23,7 +23,11 @@ class EquationsController < ApplicationController
 
   def show
     @equation = Equation.find(params[:id])
-    @writer = Individual.find(@equation.writer_id)
+    # if @equation.writer_id
+    #   @writer = Individual.find(@equation.writer_id)
+    # else
+    #   @writer = nil
+    # end
   end
 
   def edit

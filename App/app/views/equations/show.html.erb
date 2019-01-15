@@ -15,9 +15,7 @@
 	</br>
 	writer:
 	<%= unless @equation.writer_id.nil? then
-		@writer.equations.each do |eq|
-			eq.a
-		end
+		@equation.writer.name
 	else
 		link_to "Add writer", "#{@equation.id}/render_writers"
 	end %>
