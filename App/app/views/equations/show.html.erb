@@ -13,9 +13,12 @@
 	</br>
 	x2: <%= unless @equation.root2.nil? then @equation.root2 else "NaN" end %>
 	</br>
-	writer: <%= unless @equation.writer_id.nil? then 
-		@equation.writer_id 
-	else 
+	writer:
+	<%= unless @equation.writer_id.nil? then
+		@writer.equations.each do |eq|
+			eq.a
+		end
+	else
 		link_to "Add writer", "#{@equation.id}/render_writers"
 	end %>
 </h2>

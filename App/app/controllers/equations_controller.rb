@@ -14,7 +14,7 @@ class EquationsController < ApplicationController
     else
       render plain: "Something went wrong on save!!"
     end
-    
+
   end
 
   def index
@@ -23,6 +23,7 @@ class EquationsController < ApplicationController
 
   def show
     @equation = Equation.find(params[:id])
+    @writer = Individual.find(@equation.writer_id)
   end
 
   def edit
