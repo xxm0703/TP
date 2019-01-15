@@ -23,11 +23,6 @@ class EquationsController < ApplicationController
 
   def show
     @equation = Equation.find(params[:id])
-    # if @equation.writer_id
-    #   @writer = Individual.find(@equation.writer_id)
-    # else
-    #   @writer = nil
-    # end
   end
 
   def edit
@@ -72,6 +67,10 @@ class EquationsController < ApplicationController
 
 private
 
+  def equation_params
+    params.require(:equation).permit(:a, :b, :c, :root1, :root2, :writer_id)
+  end
+
   def calculate
     @output = []
     d = @equation.b**2-4*@equation.a*@equation.c
@@ -86,14 +85,19 @@ private
       @output.push("No real roots...")
     else
       d = Math.sqrt(d)
-      @equation.root1 = (-@equation.b-d)/2*@equation.a
-      @equation.root2 = (-@equation.b+d)/2*@equation.a
-      @output.push("X1: #{(-@equation.b-d)/2*@equation.a}")
-      @output.push("X2: #{(-@equation.b+d)/2*@equation.a}")
+      @equation.root1 = (-@equation.b-d)/(2*@equation.a)
+      @equation.root2 = (-@equation.b+d)/(2*@equation.a)
+      @output.push("X1: #{(-@equation.b-d)/(2*@equation.a)}")
+      @output.push("X2: #{(-@equation.b+d)/(2*@equation.a)}")
     end
   end
 
-  def equation_params
-    params.require(:equation).permit(:a, :b, :c, :root1, :root2)
+  def reload_entries
+    Equation.all.each do |equation|
+      @equation = equation
+      calculate()
+      @equation.save!
+    end
   end
+
 end
