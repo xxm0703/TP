@@ -18,7 +18,7 @@ class EquationsController < ApplicationController
   end
 
   def index
-    @equation = Equation.all
+    @equations = Equation.all
   end
 
   def show
