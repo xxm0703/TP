@@ -15219,3 +15219,889 @@ Processing by IndividualsController#show as HTML
 Completed 200 OK in 38ms (Views: 36.9ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/individuals/1" for 127.0.0.1 at 2019-01-16 14:08:33 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/martin/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mIndividual Load (0.4ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:6
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.6ms)
+  [1m[36mEquation Load (0.4ms)[0m  [1m[34mSELECT "equations".* FROM "equations" WHERE "equations"."writer_id" = ?[0m  [["writer_id", 1]]
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (18.4ms)
+  Rendered individuals/show.html.erb within layouts/application (93.5ms)
+Completed 200 OK in 620ms (Views: 571.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/individuals/1" for 127.0.0.1 at 2019-01-16 14:09:02 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:6
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mEquation Load (0.2ms)[0m  [1m[34mSELECT "equations".* FROM "equations" WHERE "equations"."writer_id" = ?[0m  [["writer_id", 1]]
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (2.2ms)
+  Rendered individuals/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 146ms (Views: 143.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/individuals/1/new_equation" for 127.0.0.1 at 2019-01-16 19:44:40 +0200
+  
+ActionController::RoutingError (No route matches [POST] "/individuals/1/new_equation"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/individuals/1" for 127.0.0.1 at 2019-01-16 19:46:11 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:6
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mEquation Load (0.2ms)[0m  [1m[34mSELECT "equations".* FROM "equations" WHERE "equations"."writer_id" = ?[0m  [["writer_id", 1]]
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (2.1ms)
+  Rendered individuals/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 23ms (Views: 20.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/individuals/1/new_equation" for 127.0.0.1 at 2019-01-16 19:46:12 +0200
+Processing by EquationsController#new as HTML
+  Parameters: {"id"=>"1"}
+  Rendering equations/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered equations/_form.html.erb (90.9ms)
+  Rendered equations/new.html.erb within layouts/application (135.3ms)
+Completed 200 OK in 165ms (Views: 153.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/individuals/1" for 127.0.0.1 at 2019-01-16 19:46:49 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:6
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.3ms)
+  [1m[36mEquation Load (0.1ms)[0m  [1m[34mSELECT "equations".* FROM "equations" WHERE "equations"."writer_id" = ?[0m  [["writer_id", 1]]
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (2.0ms)
+  Rendered individuals/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 22ms (Views: 19.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/individuals/1" for 127.0.0.1 at 2019-01-16 19:47:08 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:6
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mEquation Load (0.2ms)[0m  [1m[34mSELECT "equations".* FROM "equations" WHERE "equations"."writer_id" = ?[0m  [["writer_id", 1]]
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (2.2ms)
+  Rendered individuals/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 65ms (Views: 62.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/individuals/1" for 127.0.0.1 at 2019-01-16 19:47:40 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:6
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mEquation Load (0.2ms)[0m  [1m[34mSELECT "equations".* FROM "equations" WHERE "equations"."writer_id" = ?[0m  [["writer_id", 1]]
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (2.1ms)
+  Rendered individuals/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 23ms (Views: 20.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/individuals/1" for 127.0.0.1 at 2019-01-16 19:49:19 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mIndividual Load (0.3ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:6
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mEquation Load (0.2ms)[0m  [1m[34mSELECT "equations".* FROM "equations" WHERE "equations"."writer_id" = ?[0m  [["writer_id", 1]]
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (1.7ms)
+  Rendered individuals/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 39ms (Views: 37.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/individuals/1" for 127.0.0.1 at 2019-01-16 19:49:49 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:6
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.5ms)
+  [1m[36mEquation Load (0.2ms)[0m  [1m[34mSELECT "equations".* FROM "equations" WHERE "equations"."writer_id" = ?[0m  [["writer_id", 1]]
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (2.2ms)
+  Rendered individuals/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 37ms (Views: 34.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/equations" for 127.0.0.1 at 2019-01-16 19:50:51 +0200
+Processing by EquationsController#index as HTML
+  Rendering equations/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mEquation Load (0.2ms)[0m  [1m[34mSELECT "equations".* FROM "equations"[0m
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (2.7ms)
+  Rendered equations/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 36ms (Views: 23.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/equations" for 127.0.0.1 at 2019-01-16 19:50:51 +0200
+Processing by EquationsController#index as HTML
+  Rendering equations/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mEquation Load (0.2ms)[0m  [1m[34mSELECT "equations".* FROM "equations"[0m
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (2.4ms)
+  Rendered equations/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-01-16 19:51:07 +0200
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:3
+  Rendered individuals/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 50ms (Views: 16.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/individuals/1" for 127.0.0.1 at 2019-01-16 19:51:08 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:6
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mEquation Load (0.2ms)[0m  [1m[34mSELECT "equations".* FROM "equations" WHERE "equations"."writer_id" = ?[0m  [["writer_id", 1]]
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (1.5ms)
+  Rendered individuals/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-01-16 19:51:11 +0200
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.8ms)
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:3
+  Rendered individuals/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/individuals/2" for 127.0.0.1 at 2019-01-16 19:51:11 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:6
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mEquation Load (0.1ms)[0m  [1m[34mSELECT "equations".* FROM "equations" WHERE "equations"."writer_id" = ?[0m  [["writer_id", 2]]
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (1.6ms)
+  Rendered individuals/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 22ms (Views: 20.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-01-16 19:51:13 +0200
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:3
+  Rendered individuals/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 27ms (Views: 26.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/individuals/3" for 127.0.0.1 at 2019-01-16 19:51:14 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:6
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mEquation Load (0.1ms)[0m  [1m[34mSELECT "equations".* FROM "equations" WHERE "equations"."writer_id" = ?[0m  [["writer_id", 3]]
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (1.6ms)
+  Rendered individuals/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 25ms (Views: 24.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-01-16 19:51:16 +0200
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:3
+  Rendered individuals/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 29ms (Views: 27.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/individuals/4" for 127.0.0.1 at 2019-01-16 19:51:17 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:6
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.3ms)
+  [1m[36mEquation Load (0.1ms)[0m  [1m[34mSELECT "equations".* FROM "equations" WHERE "equations"."writer_id" = ?[0m  [["writer_id", 4]]
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (1.2ms)
+  Rendered individuals/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-01-16 19:51:19 +0200
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mIndividual Load (0.4ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:3
+  Rendered individuals/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/individuals/5" for 127.0.0.1 at 2019-01-16 19:51:20 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:6
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mEquation Load (0.1ms)[0m  [1m[34mSELECT "equations".* FROM "equations" WHERE "equations"."writer_id" = ?[0m  [["writer_id", 5]]
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (1.7ms)
+  Rendered individuals/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-01-16 19:51:22 +0200
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.3ms)
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:3
+  Rendered individuals/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 23ms (Views: 22.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/individuals/1" for 127.0.0.1 at 2019-01-16 19:51:24 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:6
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.8ms)
+  [1m[36mEquation Load (0.1ms)[0m  [1m[34mSELECT "equations".* FROM "equations" WHERE "equations"."writer_id" = ?[0m  [["writer_id", 1]]
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (2.1ms)
+  Rendered individuals/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 28ms (Views: 26.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/individuals/1/new_equation" for 127.0.0.1 at 2019-01-16 19:51:59 +0200
+Processing by EquationsController#new as HTML
+  Parameters: {"authenticity_token"=>"ljQAXSqzzhzQ44ItoUv1+Hk14JSSJ5H9k6LhAqC1Z3MXWvx74CJf2MBN04wdeuSK3Ss8opAFnPBbuXT1IVwt4g==", "id"=>"1"}
+  Rendering equations/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered equations/_form.html.erb (2.1ms)
+  Rendered equations/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 36ms (Views: 27.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-01-16 19:52:53 +0200
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.8ms)
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:3
+  Rendered individuals/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 27ms (Views: 23.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/individuals/4" for 127.0.0.1 at 2019-01-16 19:59:19 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:6
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.6ms)
+  [1m[36mEquation Load (0.2ms)[0m  [1m[34mSELECT "equations".* FROM "equations" WHERE "equations"."writer_id" = ?[0m  [["writer_id", 4]]
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (2.4ms)
+  Rendered individuals/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 25ms (Views: 22.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/individuals/4/new_equation" for 127.0.0.1 at 2019-01-16 19:59:24 +0200
+Processing by EquationsController#new as HTML
+  Parameters: {"authenticity_token"=>"gcecNqLfXfIDBjhHrQnj9tZePjHsDbgYksj90g6IpwcAqWAQaE7MNhOoaeYROPKEckDiB+4vtRVa02glj2Htlg==", "id"=>"4"}
+  Rendering equations/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered equations/_form.html.erb (2.5ms)
+  Rendered equations/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equations" for 127.0.0.1 at 2019-01-16 20:00:34 +0200
+Processing by EquationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"izuo4U3Y+XohozFdu+UQanKytxMdNIffG3NdmIxxDKUKVVTHh0lovjENYPwH1AEY1qxrJR8WitLTaMhvDZhGNA==", "equation"=>{"writer_id"=>"4", "a"=>"4", "b"=>"-16", "c"=>"-84"}, "commit"=>"Create Equation"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/equations_controller.rb:41
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/equations_controller.rb:41
+  [1m[36mEquation Create (5.8ms)[0m  [1m[32mINSERT INTO "equations" ("a", "b", "c", "root1", "root2", "created_at", "updated_at", "writer_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["a", 4.0], ["b", -16.0], ["c", -84.0], ["root1", -3.0], ["root2", 7.0], ["created_at", "2019-01-16 18:00:34.894201"], ["updated_at", "2019-01-16 18:00:34.894201"], ["writer_id", 4]]
+  ↳ app/controllers/equations_controller.rb:41
+  [1m[35m (65.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/equations_controller.rb:41
+Redirected to http://localhost:3000/equations/22
+Completed 302 Found in 108ms (ActiveRecord: 71.9ms)
+
+
+Started GET "/equations/22" for 127.0.0.1 at 2019-01-16 20:00:34 +0200
+Processing by EquationsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mEquation Load (0.2ms)[0m  [1m[34mSELECT  "equations".* FROM "equations" WHERE "equations"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/equations_controller.rb:25
+  Rendering equations/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.5ms)
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/equations/show.html.erb:18
+  Rendered equations/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 30ms (Views: 20.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/equations" for 127.0.0.1 at 2019-01-16 20:00:49 +0200
+Processing by EquationsController#index as HTML
+  Rendering equations/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.5ms)
+  [1m[36mEquation Load (0.2ms)[0m  [1m[34mSELECT "equations".* FROM "equations"[0m
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (2.8ms)
+  Rendered equations/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 31ms (Views: 29.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-01-16 20:00:51 +0200
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.5ms)
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:3
+  Rendered individuals/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 23ms (Views: 22.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/individuals/4" for 127.0.0.1 at 2019-01-16 20:00:53 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:6
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.5ms)
+  [1m[36mEquation Load (0.1ms)[0m  [1m[34mSELECT "equations".* FROM "equations" WHERE "equations"."writer_id" = ?[0m  [["writer_id", 4]]
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (1.9ms)
+  Rendered individuals/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/individuals/4" for 127.0.0.1 at 2019-01-16 20:01:21 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:6
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.6ms)
+  [1m[36mEquation Load (0.2ms)[0m  [1m[34mSELECT "equations".* FROM "equations" WHERE "equations"."writer_id" = ?[0m  [["writer_id", 4]]
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (2.0ms)
+  Rendered individuals/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/equations/22" for 127.0.0.1 at 2019-01-16 20:01:25 +0200
+Processing by EquationsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mEquation Load (0.5ms)[0m  [1m[34mSELECT  "equations".* FROM "equations" WHERE "equations"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/equations_controller.rb:25
+  Rendering equations/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.9ms)
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/equations/show.html.erb:18
+  Rendered equations/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 29ms (Views: 25.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/equations" for 127.0.0.1 at 2019-01-16 20:01:29 +0200
+Processing by EquationsController#index as HTML
+  Rendering equations/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.3ms)
+  [1m[36mEquation Load (0.2ms)[0m  [1m[34mSELECT "equations".* FROM "equations"[0m
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (2.8ms)
+  Rendered equations/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 29ms (Views: 27.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/equations" for 127.0.0.1 at 2019-01-16 20:01:49 +0200
+Processing by EquationsController#index as HTML
+  Rendering equations/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.3ms)
+  [1m[36mEquation Load (0.2ms)[0m  [1m[34mSELECT "equations".* FROM "equations"[0m
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (2.3ms)
+  Rendered equations/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/equations/2" for 127.0.0.1 at 2019-01-16 20:02:06 +0200
+Processing by EquationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEquation Load (0.1ms)[0m  [1m[34mSELECT  "equations".* FROM "equations" WHERE "equations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/equations_controller.rb:25
+  Rendering equations/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/equations/show.html.erb:18
+  Rendered equations/show.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 37ms (Views: 26.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/equations" for 127.0.0.1 at 2019-01-16 20:02:08 +0200
+Processing by EquationsController#index as HTML
+  Rendering equations/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.7ms)
+  [1m[36mEquation Load (0.2ms)[0m  [1m[34mSELECT "equations".* FROM "equations"[0m
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (2.7ms)
+  Rendered equations/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 28ms (Views: 27.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-01-16 20:02:11 +0200
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:3
+  Rendered individuals/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 27ms (Views: 26.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/equations" for 127.0.0.1 at 2019-01-16 20:02:12 +0200
+Processing by EquationsController#index as HTML
+  Rendering equations/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mEquation Load (0.2ms)[0m  [1m[34mSELECT "equations".* FROM "equations"[0m
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (2.6ms)
+  Rendered equations/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 26ms (Views: 24.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/equations/2" for 127.0.0.1 at 2019-01-16 20:02:13 +0200
+Processing by EquationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEquation Load (0.1ms)[0m  [1m[34mSELECT  "equations".* FROM "equations" WHERE "equations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/equations_controller.rb:25
+  Rendering equations/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/equations/show.html.erb:18
+  Rendered equations/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 26ms (Views: 24.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-01-16 20:02:14 +0200
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.6ms)
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:3
+  Rendered individuals/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 26ms (Views: 25.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/individuals/5" for 127.0.0.1 at 2019-01-16 20:02:16 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:6
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mEquation Load (0.3ms)[0m  [1m[34mSELECT "equations".* FROM "equations" WHERE "equations"."writer_id" = ?[0m  [["writer_id", 5]]
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (3.0ms)
+  Rendered individuals/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/equations/21" for 127.0.0.1 at 2019-01-16 20:02:21 +0200
+Processing by EquationsController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mEquation Load (0.1ms)[0m  [1m[34mSELECT  "equations".* FROM "equations" WHERE "equations"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/equations_controller.rb:25
+  Rendering equations/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.5ms)
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/equations/show.html.erb:18
+  Rendered equations/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/equations" for 127.0.0.1 at 2019-01-16 20:02:25 +0200
+Processing by EquationsController#index as HTML
+  Rendering equations/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.5ms)
+  [1m[36mEquation Load (0.2ms)[0m  [1m[34mSELECT "equations".* FROM "equations"[0m
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (4.0ms)
+  Rendered equations/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-01-16 20:02:26 +0200
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:3
+  Rendered individuals/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 21ms (Views: 20.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/individuals/1" for 127.0.0.1 at 2019-01-16 20:02:29 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:6
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.6ms)
+  [1m[36mEquation Load (0.1ms)[0m  [1m[34mSELECT "equations".* FROM "equations" WHERE "equations"."writer_id" = ?[0m  [["writer_id", 1]]
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (2.3ms)
+  Rendered individuals/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-01-16 20:02:31 +0200
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:3
+  Rendered individuals/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 26ms (Views: 25.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-01-16 20:05:40 +0200
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.5ms)
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /usr/share/rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Individual Load (0.0ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /usr/share/rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Individual Load (0.0ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /usr/share/rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Individual Load (0.0ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /usr/share/rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Individual Load (0.0ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /usr/share/rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Individual Load (0.0ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /usr/share/rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Individual Load (0.0ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /usr/share/rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Individual Load (0.0ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /usr/share/rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:4
+  Rendered individuals/index.html.erb within layouts/application (217.8ms)
+Completed 500 Internal Server Error in 220ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_individual' for #<#<Class:0x00007f0944967720>:0x00007f094607ec10>
+Did you mean?  new_individual_url):
+    1: <%= render "layouts/header" %>
+    2: 
+    3: <%= link_to "New Individual", new_individual, class: "spacer" %>
+    4: 
+    5: <% @people.each do |person| %>
+    6:     <div class="spacer">
+  
+app/views/individuals/index.html.erb:3:in `_app_views_individuals_index_html_erb___2714565175393522851_69838903180160'
+Started GET "/individuals" for 127.0.0.1 at 2019-01-16 20:05:54 +0200
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.5ms)
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:5
+  Rendered individuals/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 26ms (Views: 24.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-01-16 20:06:06 +0200
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.5ms)
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:5
+  Rendered individuals/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 39ms (Views: 37.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-01-16 20:07:25 +0200
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.8ms)
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:5
+  Rendered individuals/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 49ms (Views: 47.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-01-16 20:07:35 +0200
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:5
+  Rendered individuals/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-01-16 20:08:21 +0200
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:5
+  Rendered individuals/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 39ms (Views: 38.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-01-16 20:09:18 +0200
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.5ms)
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:5
+  Rendered individuals/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 41ms (Views: 39.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-01-16 20:10:31 +0200
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:3
+  Rendered individuals/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-01-16 20:13:33 +0200
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:3
+  Rendered individuals/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 75ms (Views: 73.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-01-16 20:14:15 +0200
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:3
+  Rendered individuals/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 104ms (Views: 103.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-01-16 20:14:53 +0200
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:3
+  Rendered individuals/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 120ms (Views: 119.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-01-16 20:14:58 +0200
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.3ms)
+  [1m[36mIndividual Load (0.3ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:3
+  Rendered individuals/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 81ms (Views: 80.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/individuals/new" for 127.0.0.1 at 2019-01-16 20:15:03 +0200
+Processing by IndividualsController#new as HTML
+  Rendering individuals/new.html.erb within layouts/application
+  Rendered individuals/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 19ms (Views: 18.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/individuals/new" for 127.0.0.1 at 2019-01-16 20:18:45 +0200
+Processing by IndividualsController#new as HTML
+  Rendering individuals/new.html.erb within layouts/application
+  Rendered individuals/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/individuals/new" for 127.0.0.1 at 2019-01-16 20:20:56 +0200
+Processing by IndividualsController#new as HTML
+  Rendering individuals/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered individuals/_form.html.erb (2.1ms)
+  Rendered individuals/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 27ms (Views: 19.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-01-16 20:25:07 +0200
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:3
+  Rendered individuals/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 25ms (Views: 21.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/individuals/1" for 127.0.0.1 at 2019-01-16 20:25:10 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:17
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mEquation Load (0.1ms)[0m  [1m[34mSELECT "equations".* FROM "equations" WHERE "equations"."writer_id" = ?[0m  [["writer_id", 1]]
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (9.1ms)
+  Rendered individuals/show.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 32ms (Views: 29.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-01-16 20:25:13 +0200
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:3
+  Rendered individuals/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 23ms (Views: 22.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/individuals/new" for 127.0.0.1 at 2019-01-16 20:25:13 +0200
+Processing by IndividualsController#new as HTML
+  Rendering individuals/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered individuals/_form.html.erb (2.0ms)
+  Rendered individuals/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 31ms (Views: 29.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-01-16 20:25:29 +0200
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:3
+  Rendered individuals/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 33ms (Views: 32.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/individuals/new" for 127.0.0.1 at 2019-01-16 20:25:32 +0200
+Processing by IndividualsController#new as HTML
+  Rendering individuals/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered individuals/_form.html.erb (2.3ms)
+  Rendered individuals/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/individuals" for 127.0.0.1 at 2019-01-16 20:25:48 +0200
+Processing by IndividualsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X2a2+J+AtLZRn9/xmKuNlqyEG5sUpWQCotmn16+SLCoKvgcaoHLQ9M3SBRlu0eTtNcp1K/XKGSwNTYbDWUYnbQ==", "individual"=>{"name"=>"Misho", "age"=>"3", "height"=>"107"}, "commit"=>"Create Individual"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `premit' for #<ActionController::Parameters:0x00007f0928362300>
+Did you mean?  permit):
+  
+app/controllers/individuals_controller.rb:27:in `individual_params'
+app/controllers/individuals_controller.rb:7:in `create'
+Started POST "/individuals" for 127.0.0.1 at 2019-01-16 20:26:05 +0200
+Processing by IndividualsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X2a2+J+AtLZRn9/xmKuNlqyEG5sUpWQCotmn16+SLCoKvgcaoHLQ9M3SBRlu0eTtNcp1K/XKGSwNTYbDWUYnbQ==", "individual"=>{"name"=>"Misho", "age"=>"3", "height"=>"107"}, "commit"=>"Create Individual"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/individuals_controller.rb:9
+  [1m[36mIndividual Create (0.3ms)[0m  [1m[32mINSERT INTO "individuals" ("name", "age", "height", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Misho"], ["age", 3], ["height", 107.0], ["created_at", "2019-01-16 18:26:05.875725"], ["updated_at", "2019-01-16 18:26:05.875725"]]
+  ↳ app/controllers/individuals_controller.rb:9
+  [1m[35m (51.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/individuals_controller.rb:9
+Redirected to http://localhost:3000/individuals/6
+Completed 302 Found in 64ms (ActiveRecord: 52.1ms)
+
+
+Started GET "/individuals/6" for 127.0.0.1 at 2019-01-16 20:26:05 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:17
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mEquation Load (0.1ms)[0m  [1m[34mSELECT "equations".* FROM "equations" WHERE "equations"."writer_id" = ?[0m  [["writer_id", 6]]
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (3.7ms)
+  Rendered individuals/show.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 36ms (Views: 33.0ms | ActiveRecord: 0.7ms)
+
+

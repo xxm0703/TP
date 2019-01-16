@@ -7,6 +7,12 @@
     margin: 10px auto;
 }
 
+#link
+{
+    margin: 20px auto;
+    float: left;
+}
+
 #info
 {
     background-color: rgb(204, 204, 204);
@@ -22,7 +28,7 @@
     margin: 15px;
 }
 
-div ~ form
+div + a
 {
     margin-top: 20px;
 }

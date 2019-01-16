@@ -1,5 +1,5 @@
 class Equation < ApplicationRecord
-	belongs_to :writer, class_name: "Individual", required: false
+	belongs_to :writer, class_name: "Individual"
 
 	validates_associated :writer
 	validates :a, presence: true

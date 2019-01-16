@@ -5,3 +5,5 @@
         Name: <%= link_to person.name, individual_path(person.id) %>
     </div>
 <% end %>
+
+<%= link_to "Create Individual", new_individual_path, id: "link" %>

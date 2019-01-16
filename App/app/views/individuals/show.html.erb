@@ -5,7 +5,7 @@
                 <span>Name: <%= @person.name %></span>
                 <span>Age: <%= @person.age %></span>
         </div>
-        <%= button_to "Add equation", "#{@person.id}/new_equation"%>
+        <%= link_to "Add equation", "#{@person.id}/new_equation", method: :get%>
 </div>
 <div id="equations">
 
