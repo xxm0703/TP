@@ -5,12 +5,16 @@
                 <span>Name: <%= @person.name %></span>
                 <span>Age: <%= @person.age %></span>
         </div>
-        <%= link_to "Add equation", "#{@person.id}/new_equation", method: :get%>
+        <%= link_to "Add equation", "#{@person.id}/new_equation" %>
 </div>
 <div id="equations">
 
-<%= render 'layouts/equation_table', equations: @person.equations %>
-
+<%= if @person.equations.any?
+        render 'layouts/equation_table', equations: @person.equations 
+else
+        simple_format("No equations of this user", {class: "bold"}, wrapper_tag: "h2")
+end
+%>
 
 </div>
 

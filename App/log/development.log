@@ -16105,3 +16105,157 @@ Processing by IndividualsController#show as HTML
 Completed 200 OK in 36ms (Views: 33.0ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/individuals/6" for 127.0.0.1 at 2019-01-16 20:29:20 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:17
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.6ms)
+  [1m[36mEquation Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "equations" WHERE "equations"."writer_id" = ? LIMIT ?[0m  [["writer_id", 6], ["LIMIT", 1]]
+  ↳ app/views/individuals/show.html.erb:12
+  Rendered individuals/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 28ms (Views: 19.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/individuals/6" for 127.0.0.1 at 2019-01-16 20:31:50 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:17
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered individuals/show.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/home/martin/Programming/TP/App/app/views/individuals/show.html.erb:14: syntax error, unexpected ')'
+else );@output_buffer.safe_append='
+     ^
+/home/martin/Programming/TP/App/app/views/individuals/show.html.erb:23: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/martin/Programming/TP/App/app/views/individuals/show.html.erb:25: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/individuals/show.html.erb:14: syntax error, unexpected ')'
+app/views/individuals/show.html.erb:23: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/individuals/show.html.erb:25: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/individuals/6" for 127.0.0.1 at 2019-01-16 20:48:25 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:17
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mEquation Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "equations" WHERE "equations"."writer_id" = ? LIMIT ?[0m  [["writer_id", 6], ["LIMIT", 1]]
+  ↳ app/views/individuals/show.html.erb:12
+  Rendered individuals/show.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 52ms (Views: 42.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/individuals/6" for 127.0.0.1 at 2019-01-16 20:48:51 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:17
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mEquation Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "equations" WHERE "equations"."writer_id" = ? LIMIT ?[0m  [["writer_id", 6], ["LIMIT", 1]]
+  ↳ app/views/individuals/show.html.erb:12
+  Rendered individuals/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 33ms (Views: 31.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/individuals/6" for 127.0.0.1 at 2019-01-16 20:49:30 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:17
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mEquation Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "equations" WHERE "equations"."writer_id" = ? LIMIT ?[0m  [["writer_id", 6], ["LIMIT", 1]]
+  ↳ app/views/individuals/show.html.erb:12
+  Rendered individuals/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 43ms (Views: 40.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/individuals/6" for 127.0.0.1 at 2019-01-16 20:50:24 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:17
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mEquation Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "equations" WHERE "equations"."writer_id" = ? LIMIT ?[0m  [["writer_id", 6], ["LIMIT", 1]]
+  ↳ app/views/individuals/show.html.erb:12
+  Rendered individuals/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 36ms (Views: 33.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/individuals/6" for 127.0.0.1 at 2019-01-16 20:51:13 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:17
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.5ms)
+  [1m[36mEquation Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "equations" WHERE "equations"."writer_id" = ? LIMIT ?[0m  [["writer_id", 6], ["LIMIT", 1]]
+  ↳ app/views/individuals/show.html.erb:12
+  Rendered individuals/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 29ms (Views: 26.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/individuals/6" for 127.0.0.1 at 2019-01-16 20:51:55 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:17
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mEquation Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "equations" WHERE "equations"."writer_id" = ? LIMIT ?[0m  [["writer_id", 6], ["LIMIT", 1]]
+  ↳ app/views/individuals/show.html.erb:12
+  Rendered individuals/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/individuals/6" for 127.0.0.1 at 2019-01-16 20:53:07 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:17
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mEquation Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "equations" WHERE "equations"."writer_id" = ? LIMIT ?[0m  [["writer_id", 6], ["LIMIT", 1]]
+  ↳ app/views/individuals/show.html.erb:12
+  Rendered individuals/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 26ms (Views: 24.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/individuals/6" for 127.0.0.1 at 2019-01-16 20:53:16 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:17
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.5ms)
+  [1m[36mEquation Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "equations" WHERE "equations"."writer_id" = ? LIMIT ?[0m  [["writer_id", 6], ["LIMIT", 1]]
+  ↳ app/views/individuals/show.html.erb:12
+  Rendered individuals/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 24ms (Views: 21.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/individuals/6" for 127.0.0.1 at 2019-01-16 20:53:36 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:17
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.5ms)
+  [1m[36mEquation Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "equations" WHERE "equations"."writer_id" = ? LIMIT ?[0m  [["writer_id", 6], ["LIMIT", 1]]
+  ↳ app/views/individuals/show.html.erb:12
+  Rendered individuals/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.3ms)
+
+
