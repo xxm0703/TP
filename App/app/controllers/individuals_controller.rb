@@ -21,6 +21,12 @@ class IndividualsController < ApplicationController
     @people = Individual.all
   end
 
+  def destroy
+    person = Individual.find(params[:id])
+    person.destroy
+    redirect_to individuals_path
+  end
+
 private
 
   def individual_params

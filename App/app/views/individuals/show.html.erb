@@ -4,18 +4,18 @@
         <div> 
                 <span>Name: <%= @person.name %></span>
                 <span>Age: <%= @person.age %></span>
+                <span style="float:right"><%= link_to "delete account", @person, method: :delete %></span>
         </div>
         <%= link_to "Add equation", "#{@person.id}/new_equation" %>
 </div>
 <div id="equations">
 
-<%= if @person.equations.any?
+<% if @person.equations.any?
         render 'layouts/equation_table', equations: @person.equations 
-else
-        simple_format("No equations of this user", {class: "bold"}, wrapper_tag: "h2")
-end
-%>
+else %>
+        <h2>No equations of this user</h2>
+<% end %>
 
 </div>
 
-<%= link_to "Go Back", individuals_path %>
+<%= link_to "Individuals", individuals_path %>
