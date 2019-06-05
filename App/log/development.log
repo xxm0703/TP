@@ -1,0 +1,347 @@
+Started GET "/" for 127.0.0.1 at 2019-05-07 15:29:33 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/martin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered pages/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 347ms (Views: 340.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-05-07 15:29:36 +0300
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.6ms)
+  [1m[36mIndividual Load (0.4ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:3
+  Rendered individuals/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 56ms (Views: 47.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/individuals/1" for 127.0.0.1 at 2019-05-07 15:29:41 +0300
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:17
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.5ms)
+  [1m[36mEquation Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "equations" WHERE "equations"."writer_id" = ? LIMIT ?[0m  [["writer_id", 1], ["LIMIT", 1]]
+  ↳ app/views/individuals/show.html.erb:13
+  [1m[36mEquation Load (0.4ms)[0m  [1m[34mSELECT "equations".* FROM "equations" WHERE "equations"."writer_id" = ?[0m  [["writer_id", 1]]
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (14.7ms)
+  Rendered individuals/show.html.erb within layouts/application (40.9ms)
+Completed 200 OK in 88ms (Views: 73.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/individuals/1" for 127.0.0.1 at 2019-05-07 15:30:06 +0300
+Processing by IndividualsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:17
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.6ms)
+  [1m[36mEquation Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "equations" WHERE "equations"."writer_id" = ? LIMIT ?[0m  [["writer_id", 1], ["LIMIT", 1]]
+  ↳ app/views/individuals/show.html.erb:13
+  [1m[36mEquation Load (0.2ms)[0m  [1m[34mSELECT "equations".* FROM "equations" WHERE "equations"."writer_id" = ?[0m  [["writer_id", 1]]
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (2.9ms)
+  Rendered individuals/show.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 72ms (Views: 65.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/individuals/1.json" for 127.0.0.1 at 2019-05-07 15:31:01 +0300
+Processing by IndividualsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mIndividual Load (0.3ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:17
+Completed 406 Not Acceptable in 23ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionController::UnknownFormat (IndividualsController#show is missing a template for this request format and variant.
+
+request.formats: ["application/json"]
+request.variant: []):
+  
+actionpack (5.2.2) lib/action_controller/metal/implicit_render.rb:42:in `default_render'
+actionpack (5.2.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.2) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.2) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-06-04 15:08:51 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/martin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered pages/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 235ms (Views: 228.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-06-04 15:09:43 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/martin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered pages/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 353ms (Views: 340.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equations" for 127.0.0.1 at 2019-06-04 15:09:48 +0300
+Processing by EquationsController#index as HTML
+  Rendering equations/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.7ms)
+  [1m[36mEquation Load (0.4ms)[0m  [1m[34mSELECT "equations".* FROM "equations"[0m
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (18.4ms)
+  Rendered equations/index.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 58ms (Views: 51.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-06-04 15:09:54 +0300
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.7ms)
+  [1m[36mIndividual Load (0.4ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:3
+  Rendered individuals/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 46ms (Views: 40.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/equations" for 127.0.0.1 at 2019-06-04 15:09:55 +0300
+Processing by EquationsController#index as HTML
+  Rendering equations/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (1.6ms)
+  [1m[36mEquation Load (0.3ms)[0m  [1m[34mSELECT "equations".* FROM "equations"[0m
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (5.7ms)
+  Rendered equations/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 47ms (Views: 44.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-06-04 15:09:58 +0300
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.5ms)
+  [1m[36mIndividual Load (0.3ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:3
+  Rendered individuals/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 40ms (Views: 37.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/individuals/6" for 127.0.0.1 at 2019-06-04 15:10:09 +0300
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:17
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.7ms)
+  [1m[36mEquation Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "equations" WHERE "equations"."writer_id" = ? LIMIT ?[0m  [["writer_id", 6], ["LIMIT", 1]]
+  ↳ app/views/individuals/show.html.erb:13
+  Rendered individuals/show.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 43ms (Views: 38.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2019-06-04 15:12:44 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/martin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-06-04 15:12:46 +0300
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered pages/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 210ms (Views: 208.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-06-04 15:31:04 +0300
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.7ms)
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:3
+  Rendered individuals/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 38ms (Views: 33.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-06-04 15:31:15 +0300
+Processing by IndividualsController#index as */*
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.6ms)
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:3
+  Rendered individuals/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 67ms (Views: 58.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/individuals.json" for 127.0.0.1 at 2019-06-04 15:32:04 +0300
+Processing by IndividualsController#index as JSON
+Completed 406 Not Acceptable in 20ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (IndividualsController#index is missing a template for this request format and variant.
+
+request.formats: ["application/json"]
+request.variant: []):
+  
+actionpack (5.2.2) lib/action_controller/metal/implicit_render.rb:42:in `default_render'
+actionpack (5.2.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.2) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.2) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
