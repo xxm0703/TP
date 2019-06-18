@@ -16,6 +16,8 @@ class UsersController < ApplicationController
     respond_to do |format|
       if User.where(id: params[:id]).empty?
         format.json { render :index, status: :unprocessable_entity, notice: 'No such entry' }
+      elsif current_user.nil?
+        format.json { render :index, status: :unauthorized, notice: 'Unauthorized entry' }
       else
         set_user
         format.html
