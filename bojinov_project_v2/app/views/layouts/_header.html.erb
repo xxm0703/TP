@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <body>
+
+    <% if current_user %>
+      <p>Logged in as <%= current_user.name %></p>
+    <% end %>
+      <ul class="nav-bar">
+        <li>
+          <%= link_to "users" , users_path%>
+        </li>
+        <li>
+          <%= link_to "documents" , documents_path%>
+        </li>
+        <% if current_user %>
+          <li>
+            <%= link_to "Log out", logout_path %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to "Sign up", signup_path %>
+          </li>
+          <li>
+            <%= link_to "Log in", login_path %>
+          </li>
+        <% end %>
+      </ul>
+
+    <%= yield %>
+  
+  </body>
+</html>

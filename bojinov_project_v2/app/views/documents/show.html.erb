@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<%= render 'layouts/header' %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @document.name %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @document.desc %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @document.content %>
+</p>
+
+<% if @document.photo %>
+  <p>
+    <strong>Photo:</strong> <br>
+    <%= image_tag serve_photo_path(@document.photo) %>
+  </p>
+<% end %>
+
+<% if current_user %>
+  <%= link_to 'Edit', edit_document_path(@document) %> |
+<% end %>
+<%= link_to 'Back', documents_path %>

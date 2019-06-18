@@ -17494,3 +17494,373 @@ Processing by EquationsController#index as HTML
 Completed 200 OK in 24ms (Views: 22.8ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-02-02 13:10:46 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/martin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered pages/index.html.erb within layouts/application (24.8ms)
+Completed 200 OK in 2986ms (Views: 2958.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equations" for 127.0.0.1 at 2019-02-02 13:10:54 +0200
+Processing by EquationsController#index as HTML
+  Rendering equations/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.5ms)
+  [1m[36mEquation Load (20.4ms)[0m  [1m[34mSELECT "equations".* FROM "equations"[0m
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (45.8ms)
+  Rendered equations/index.html.erb within layouts/application (78.5ms)
+Completed 200 OK in 282ms (Views: 76.3ms | ActiveRecord: 20.9ms)
+
+
+Started GET "/equations/1" for 127.0.0.1 at 2019-02-02 13:10:56 +0200
+Processing by EquationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEquation Load (0.3ms)[0m  [1m[34mSELECT  "equations".* FROM "equations" WHERE "equations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/equations_controller.rb:25
+  Rendering equations/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (1.0ms)
+  [1m[36mIndividual Load (47.5ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/equations/show.html.erb:18
+  Rendered equations/show.html.erb within layouts/application (121.3ms)
+Completed 200 OK in 183ms (Views: 89.7ms | ActiveRecord: 48.2ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-02-02 13:10:58 +0200
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.7ms)
+  [1m[36mIndividual Load (0.3ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:3
+  Rendered individuals/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 41ms (Views: 24.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/individuals/2" for 127.0.0.1 at 2019-02-02 13:11:00 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:17
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.7ms)
+  [1m[36mEquation Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "equations" WHERE "equations"."writer_id" = ? LIMIT ?[0m  [["writer_id", 2], ["LIMIT", 1]]
+  ↳ app/views/individuals/show.html.erb:13
+  [1m[36mEquation Load (0.1ms)[0m  [1m[34mSELECT "equations".* FROM "equations" WHERE "equations"."writer_id" = ?[0m  [["writer_id", 2]]
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (2.1ms)
+  Rendered individuals/show.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 43ms (Views: 34.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/individuals" for 127.0.0.1 at 2019-02-02 13:11:04 +0200
+Processing by IndividualsController#index as HTML
+  Rendering individuals/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mIndividual Load (0.2ms)[0m  [1m[34mSELECT "individuals".* FROM "individuals"[0m
+  ↳ app/views/individuals/index.html.erb:3
+  Rendered individuals/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/individuals/1" for 127.0.0.1 at 2019-02-02 13:11:05 +0200
+Processing by IndividualsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/individuals_controller.rb:17
+  Rendering individuals/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.7ms)
+  [1m[36mEquation Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "equations" WHERE "equations"."writer_id" = ? LIMIT ?[0m  [["writer_id", 1], ["LIMIT", 1]]
+  ↳ app/views/individuals/show.html.erb:13
+  [1m[36mEquation Load (0.4ms)[0m  [1m[34mSELECT "equations".* FROM "equations" WHERE "equations"."writer_id" = ?[0m  [["writer_id", 1]]
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (3.4ms)
+  Rendered individuals/show.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 38ms (Views: 36.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/equations" for 127.0.0.1 at 2019-02-02 13:11:09 +0200
+Processing by EquationsController#index as HTML
+  Rendering equations/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.3ms)
+  [1m[36mEquation Load (0.2ms)[0m  [1m[34mSELECT "equations".* FROM "equations"[0m
+  ↳ app/views/layouts/_equation_table.html.erb:13
+  Rendered layouts/_equation_table.html.erb (2.1ms)
+  Rendered equations/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/equations/1" for 127.0.0.1 at 2019-02-02 13:11:10 +0200
+Processing by EquationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEquation Load (0.1ms)[0m  [1m[34mSELECT  "equations".* FROM "equations" WHERE "equations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/equations_controller.rb:25
+  Rendering equations/show.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.5ms)
+  [1m[36mIndividual Load (0.1ms)[0m  [1m[34mSELECT  "individuals".* FROM "individuals" WHERE "individuals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/equations/show.html.erb:18
+  Rendered equations/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 24ms (Views: 22.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-02 13:48:14 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/martin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered pages/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 163ms (Views: 158.1ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (8.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "equations"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (137.7ms)[0m  [1m[35mCREATE TABLE "equations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "a" decimal, "b" decimal, "c" decimal, "root1" decimal, "root2" decimal, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "writer_id" integer)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (96.0ms)[0m  [1m[35mCREATE  INDEX "index_equations_on_writer_id" ON "equations" ("writer_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "individuals"[0m
+  ↳ db/schema.rb:27
+  [1m[35m (131.8ms)[0m  [1m[35mCREATE TABLE "individuals" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "height" decimal, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:27
+  [1m[35m (113.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (95.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190113215641)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (73.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181108220526),
+(20181107135645);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (114.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-02-02 11:50:23.726935"], ["updated_at", "2019-02-02 11:50:23.726935"]]
+  ↳ db/schema.rb:13
+  [1m[35m (83.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2019-02-02 11:50:23.815149"], ["key", "environment"]]
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (78.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "equations"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (87.1ms)[0m  [1m[35mCREATE TABLE "equations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "a" decimal, "b" decimal, "c" decimal, "root1" decimal, "root2" decimal, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "writer_id" integer)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (442.4ms)[0m  [1m[35mCREATE  INDEX "index_equations_on_writer_id" ON "equations" ("writer_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "individuals"[0m
+  ↳ db/schema.rb:27
+  [1m[35m (166.1ms)[0m  [1m[35mCREATE TABLE "individuals" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "height" decimal, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:27
+  [1m[35m (138.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (57.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190113215641)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (98.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181108220526),
+(20181107135645);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (72.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-02-02 11:51:50.174911"], ["updated_at", "2019-02-02 11:51:50.174911"]]
+  ↳ db/schema.rb:13
+  [1m[35m (92.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2019-02-02 11:51:50.269861"], ["key", "environment"]]
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (75.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "equations"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (104.9ms)[0m  [1m[35mCREATE TABLE "equations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "a" decimal, "b" decimal, "c" decimal, "root1" decimal, "root2" decimal, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "writer_id" integer)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (105.5ms)[0m  [1m[35mCREATE  INDEX "index_equations_on_writer_id" ON "equations" ("writer_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "individuals"[0m
+  ↳ db/schema.rb:27
+  [1m[35m (122.2ms)[0m  [1m[35mCREATE TABLE "individuals" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "height" decimal, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:27
+  [1m[35m (135.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (74.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190113215641)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (74.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181108220526),
+(20181107135645);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (77.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-02-02 12:01:10.860637"], ["updated_at", "2019-02-02 12:01:10.860637"]]
+  ↳ db/schema.rb:13
+  [1m[35m (64.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2019-02-02 12:01:10.928883"], ["key", "environment"]]
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (102.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (80.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "equations"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (80.7ms)[0m  [1m[35mCREATE TABLE "equations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "a" decimal, "b" decimal, "c" decimal, "root1" decimal, "root2" decimal, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "writer_id" integer)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (99.8ms)[0m  [1m[35mCREATE  INDEX "index_equations_on_writer_id" ON "equations" ("writer_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (127.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "individuals"[0m
+  ↳ db/schema.rb:27
+  [1m[35m (78.5ms)[0m  [1m[35mCREATE TABLE "individuals" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "height" decimal, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (101.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "equations"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (115.0ms)[0m  [1m[35mCREATE TABLE "equations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "a" decimal, "b" decimal, "c" decimal, "root1" decimal, "root2" decimal, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "writer_id" integer)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (96.7ms)[0m  [1m[35mCREATE  INDEX "index_equations_on_writer_id" ON "equations" ("writer_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (67.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "individuals"[0m
+  ↳ db/schema.rb:27
+  [1m[35m (70.6ms)[0m  [1m[35mCREATE TABLE "individuals" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "height" decimal, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "development"], ["updated_at", "2019-02-02 12:03:48.660257"], ["key", "environment"]]
+  ↳ db/schema.rb:13
+  [1m[35m (110.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (0.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2019-02-02 12:03:48.772830"], ["key", "environment"]]
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (118.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/martin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[36mIndividual Create (0.2ms)[0m  [1m[32mINSERT INTO "individuals" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Martin"], ["age", 17], ["created_at", "2019-02-02 12:03:48.905682"], ["updated_at", "2019-02-02 12:03:48.905682"]]
+  ↳ db/seeds.rb:6
+  [1m[35m (73.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[36mIndividual Create (0.4ms)[0m  [1m[32mINSERT INTO "individuals" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Gosho"], ["age", 42], ["created_at", "2019-02-02 12:03:48.983245"], ["updated_at", "2019-02-02 12:03:48.983245"]]
+  ↳ db/seeds.rb:6
+  [1m[35m (79.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[36mIndividual Create (0.3ms)[0m  [1m[32mINSERT INTO "individuals" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Tosho"], ["age", 3], ["created_at", "2019-02-02 12:03:49.066457"], ["updated_at", "2019-02-02 12:03:49.066457"]]
+  ↳ db/seeds.rb:6
+  [1m[35m (87.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:6

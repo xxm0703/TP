@@ -78,3 +78,6 @@ pickle-email-*.html
 *.old
 *.jar
 xerial*.*
+
+# Ignore master key for decrypting credentials and more.
+# /config/master.key
