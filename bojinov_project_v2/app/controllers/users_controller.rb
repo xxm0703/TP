@@ -1,12 +1,14 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token
 
   # GET /users
   # GET /users.json
   def index
     @page = params[:page]
     @page ||= 1
-    page_size = 2
+    page_size = params[:page_size]
+    page_size ||= 2
     @users = User.all.paginate(:page => @page, :per_page => page_size)
   end
 
@@ -15,13 +17,16 @@ class UsersController < ApplicationController
   def show
     respond_to do |format|
       if User.where(id: params[:id]).empty?
+        format.html { render :index }
         format.json { render :index, status: :unprocessable_entity, notice: 'No such entry' }
-      elsif current_user.nil?
-        format.json { render :index, status: :unauthorized, notice: 'Unauthorized entry' }
+      # elsif current_user.nil?
+      #   set_user
+      #   format.html { render :index, status: :unauthorized }
+      #   format.json { render :index, status: :unauthorized, notice: 'Unauthorized entry' }
       else
         set_user
         format.html
-        format.json { render :show, status: :created, location: @user }
+        format.json { render :show, status: :ok, location: @user }
       end
     end
   end
